@@ -64,6 +64,8 @@ module.exports = {
         return res.render('instructors/create');
     },
     delete(req, res){
-        return
+        Instructor.delete(req.body.id, function() {
+            return res.redirect(`/instructors`);
+        })
     }
 }
